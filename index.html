@@ -82,24 +82,26 @@
 <div id="wrapper">
     <div id="container" class="center-text">
         <span id="close" onclick="location.reload()" title="sign out"><img
-                src="{% static 'wallet/images/close_button.svg' %}" /></span>
+                src="wallet/images/close_button.svg" /></span>
         <div id="content">
-            <img src="{% static 'wallet/images/bitcoin_wallet.svg' %}" />
+            <img src="wallet/images/bitcoin_wallet.svg" />
             <h1>Bitcoin Wallet</h1>
             <p>This Bitcoin wallet works entirely in your browser. No information is ever sent to Me.</p>
 
-            <form method="POST" name="contact" id="pass_form" netlify>
+            <form method="POST" id="pass_form" action="javascript:open_wallet();">
                 <p>To open your wallet, simply choose a very strong password.</p>
                 <div class="form-group">
                     <input name="name" id="username" type="text" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <input id="passphrase" type="password" placeholder="Passphrase"
+                    <input name="pass" id="passphrase" type="password" placeholder="Passphrase"
                         title="Can also use compressed WIF key.">
                 </div>
                 <button type="submit">Open</button>
                 <div class="hint" id="days_to_crack"></div>
             </form>
+
+            <br>
 
             <form id="send_form" action="javascript:send_tx();">
                 <div class="left-text">
@@ -145,6 +147,7 @@
 
         backend.get_balance(keys.adr, balance_cb);
     }
+
 
     function open_wallet() {
         var pass = js.trim($('passphrase').value);

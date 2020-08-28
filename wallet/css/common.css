@@ -16,18 +16,6 @@
     padding: 30px;
 }
 
-form input {
-    padding: 8px;
-}
-
-#pass_form input {
-    width: 60%;
-}
-
-#send_form {
-    display: none;
-}
-
 #wif {
     color: #44484c;
 }
@@ -49,24 +37,19 @@ form input {
     cursor: pointer;
 }
 
-#amount {
-    width: 30%;
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    /* Red */
+    color: white;
+    margin-bottom: 15px;
 }
 
-#to {
-    width: 48%;
-}
 
 #transactions {
     margin-left: 15px;
 }
 
-#footer {
-    font-size: 70%;
-    padding: 20px;
-    height: 40px;
-    text-align: justify;
-}
 
 .content-inverse-color a {
     text-decoration: underline;
@@ -77,9 +60,7 @@ form input {
 }
 
 @media screen and (max-width: 959px) {
-    #footer {
-        height: 100%;
-    }
+
 
     #container {
         max-width: 85vw;
@@ -110,7 +91,7 @@ form input {
     }
 
     #pass_form input {
-        width: auto;
+
         margin-bottom: 10px;
     }
 
