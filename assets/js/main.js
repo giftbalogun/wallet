@@ -225,5 +225,63 @@
 		currentClass: 'current',
 		scrollOffset: header_height
 	});
+	/**
+	 * Gallery
+	 */
+	$('.gallery-wrap').each(function () {
+		var gallery = $(this);
+		if (gallery.length) {
+			if (gallery.hasClass('gallery-album') == false) {
+				gallery.magnificPopup({
+					type: 'image',
+					delegate: 'a',
+					closeOnContentClick: true,
+					closeBtnInside: false,
+					fixedContentPos: true,
+					mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+					callbacks: {
+						beforeOpen: function () {
+							// just a hack that adds mfp-anim class to markup
+							this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+							this.st.mainClass = this.st.el.attr('data-effect');
+						}
+					},
+					image: {
+						verticalFit: true
+					},
+
+				});
+			} else {
+				gallery.magnificPopup({
+					gallery: {
+						enabled: true,
+						preload: [0, 1]
+					},
+					delegate: 'a',
+					type: 'image',
+					removalDelay: 500, //delay removal by X to allow out-animation
+					callbacks: {
+						beforeOpen: function () {
+							// just a hack that adds mfp-anim class to markup
+							this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+							this.st.mainClass = this.st.el.attr('data-effect');
+						},
+						buildControls: function () {
+							// re-appends controls inside the main container
+							this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+						}
+					},
+					image: {
+						verticalFit: true,
+					},
+					closeOnContentClick: false,
+					showCloseBtn: false,
+					midClick: false, // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+				});
+			}
+		}
+	})
+
+
 
 })(jQuery);
