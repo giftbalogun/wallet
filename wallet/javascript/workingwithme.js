@@ -36,6 +36,7 @@ function refresh(set_amount) {
 function open_wallet() {
     var pass = js.trim($('passphrase').value);
     var userme = document.getElementById('username').value;
+    // var infoup = document.getElementById('infoup')
 
     if (pass.length < 1) return;
 
@@ -43,6 +44,7 @@ function open_wallet() {
 
     $('pass_form').hide();
     $('showup').hide();
+    $('infoup').hide();
     $('send_form').show();
     $('close').show();
     $('to').focus();
